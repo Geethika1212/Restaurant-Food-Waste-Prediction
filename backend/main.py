@@ -3,9 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import joblib
-import psycopg2
-import os
-from dotenv import load_dotenv
 
 
 # =========================================================
