@@ -1,0 +1,727 @@
+/* =========================================================
+   RECOMMENDATIONS PAGE
+   ========================================================= */
+
+.recommendations-page {
+  min-height: 100vh;
+  background: #f4faf7;
+  color: #102a43;
+  padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.recommendations-hero {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 75px 30px 55px;
+}
+
+.recommendations-label {
+  color: #087f3f;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.recommendations-hero h1 {
+  margin: 0;
+  color: #075b36;
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.recommendations-hero p {
+  max-width: 900px;
+  margin-top: 22px;
+  color: #607d9a;
+  font-size: 21px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.recommendation-summary {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.recommendation-summary-card {
+  background: white;
+  border: 1px solid #dce8e2;
+  border-radius: 22px;
+  padding: 28px;
+
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.recommendation-summary-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 30px rgba(20, 80, 50, 0.10);
+}
+
+.recommendation-summary-icon {
+  min-width: 60px;
+  height: 60px;
+
+  border-radius: 17px;
+
+  background: #dcfce7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+.recommendation-summary-card h3 {
+  margin: 2px 0 10px;
+
+  color: #075b36;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.recommendation-summary-card p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.risk-section,
+.strategies-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px 75px;
+}
+
+.recommendation-heading {
+  margin-bottom: 35px;
+}
+
+.recommendation-heading > span {
+  display: block;
+
+  color: #0b8745;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.recommendation-heading h2 {
+  margin: 0;
+
+  color: #075b36;
+
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.recommendation-heading p {
+  max-width: 850px;
+
+  margin: 14px 0 0;
+
+  color: #68809a;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   RISK CARDS
+   ========================================================= */
+
+.risk-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.risk-card {
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.risk-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 30px rgba(20, 80, 50, 0.10);
+}
+
+.risk-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  margin-bottom: 20px;
+}
+
+.risk-icon {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 28px;
+
+  background: #f8fafc;
+}
+
+.risk-top h3 {
+  margin: 0 0 6px;
+
+  color: #075b36;
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+.risk-status {
+  color: #7187a0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.risk-card > p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+.risk-actions {
+  margin-top: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.risk-actions div {
+  color: #405b73;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1.45;
+}
+
+.low-risk {
+  border-top: 5px solid #16a34a;
+}
+
+.medium-risk {
+  border-top: 5px solid #eab308;
+}
+
+.high-risk {
+  border-top: 5px solid #ef4444;
+}
+
+
+/* =========================================================
+   STRATEGIES
+   ========================================================= */
+
+.strategies-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.strategy-card {
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 21px;
+
+  padding: 28px;
+
+  box-shadow: 0 7px 22px rgba(20, 80, 50, 0.05);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 13px 28px rgba(20, 80, 50, 0.09);
+}
+
+.strategy-icon {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 16px;
+
+  background: #dcfce7;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 28px;
+
+  margin-bottom: 20px;
+}
+
+.strategy-card h3 {
+  margin: 0 0 12px;
+
+  color: #075b36;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+.strategy-card p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   KITCHEN MANAGEMENT
+   ========================================================= */
+
+.kitchen-section {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 75px;
+}
+
+.kitchen-content {
+  background: #075b36;
+
+  border-radius: 28px;
+
+  padding: 45px;
+
+  color: white;
+}
+
+.kitchen-heading {
+  max-width: 850px;
+
+  margin-bottom: 38px;
+}
+
+.kitchen-heading > span {
+  display: block;
+
+  color: #a7f3c8;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.kitchen-heading h2 {
+  margin: 0;
+
+  font-size: 36px;
+
+  font-weight: 800;
+}
+
+.kitchen-heading p {
+  margin: 15px 0 0;
+
+  color: #d7f5e5;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.kitchen-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.kitchen-item {
+  display: flex;
+
+  gap: 16px;
+
+  padding: 23px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 18px;
+}
+
+.kitchen-check {
+  min-width: 35px;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: #a7f3c8;
+
+  color: #075b36;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 19px;
+
+  font-weight: 900;
+}
+
+.kitchen-item h3 {
+  margin: 0 0 7px;
+
+  font-size: 19px;
+
+  font-weight: 800;
+}
+
+.kitchen-item p {
+  margin: 0;
+
+  color: #d7f5e5;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   SURPLUS MANAGEMENT
+   ========================================================= */
+
+.surplus-section {
+  max-width: 1190px;
+
+  margin: 0 auto 70px;
+
+  padding: 32px;
+
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 23px;
+
+  display: flex;
+
+  gap: 24px;
+
+  align-items: flex-start;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+}
+
+.surplus-icon {
+  min-width: 65px;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 18px;
+
+  background: #dcfce7;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 32px;
+}
+
+.surplus-content > span {
+  display: block;
+
+  color: #0b8745;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 8px;
+}
+
+.surplus-content h2 {
+  margin: 0 0 10px;
+
+  color: #075b36;
+
+  font-size: 27px;
+
+  font-weight: 800;
+}
+
+.surplus-content > p {
+  max-width: 950px;
+
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+.surplus-points {
+  margin-top: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.surplus-points div {
+  color: #405b73;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+   ========================================================= */
+
+.recommendation-footer {
+  max-width: 1190px;
+
+  margin: 0 auto;
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  background: #e9f9ef;
+
+  border: 1px solid #c9eed7;
+
+  border-radius: 25px;
+}
+
+.footer-icon {
+  font-size: 38px;
+
+  margin-bottom: 12px;
+}
+
+.recommendation-footer h2 {
+  margin: 0;
+
+  color: #075b36;
+
+  font-size: 32px;
+
+  font-weight: 800;
+}
+
+.recommendation-footer p {
+  max-width: 850px;
+
+  margin: 14px auto 0;
+
+  color: #66809c;
+
+  font-size: 18px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .recommendations-hero h1 {
+    font-size: 45px;
+  }
+
+  .recommendation-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strategies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .recommendations-hero {
+    padding: 50px 20px 40px;
+  }
+
+  .recommendations-hero h1 {
+    font-size: 36px;
+  }
+
+  .recommendations-hero p {
+    font-size: 18px;
+  }
+
+  .recommendation-summary,
+  .risk-section,
+  .strategies-section,
+  .kitchen-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .recommendation-heading h2 {
+    font-size: 30px;
+  }
+
+  .strategies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kitchen-content {
+    padding: 30px 22px;
+  }
+
+  .kitchen-heading h2 {
+    font-size: 29px;
+  }
+
+  .kitchen-list {
+    grid-template-columns: 1fr;
+  }
+
+  .surplus-section {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    padding: 25px;
+
+    flex-direction: column;
+  }
+
+  .recommendation-footer {
+    margin: 0 20px;
+
+    padding: 35px 22px;
+  }
+
+  .recommendation-footer h2 {
+    font-size: 28px;
+  }
+
+}

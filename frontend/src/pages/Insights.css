@@ -1,0 +1,649 @@
+/* =========================================================
+   INSIGHTS PAGE
+   ========================================================= */
+
+.insights-page {
+  min-height: 100vh;
+  background: #f4faf7;
+  color: #102a43;
+  padding-bottom: 70px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.insights-hero {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 75px 30px 55px;
+}
+
+.hero-label {
+  color: #087f3f;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.insights-hero h1 {
+  margin: 0;
+  color: #075b36;
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.insights-hero p {
+  max-width: 900px;
+  margin-top: 22px;
+  color: #607d9a;
+  font-size: 21px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.insight-summary {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.insight-summary-card {
+  background: white;
+  border: 1px solid #dce8e2;
+  border-radius: 22px;
+  padding: 28px;
+
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.insight-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(20, 80, 50, 0.10);
+}
+
+.summary-icon {
+  min-width: 60px;
+  height: 60px;
+
+  border-radius: 17px;
+
+  background: #dcfce7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+.insight-summary-card h3 {
+  margin: 2px 0 10px;
+
+  color: #075b36;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.insight-summary-card p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.mining-section,
+.factor-section {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px 75px;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading > span {
+  display: block;
+
+  color: #0b8745;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #075b36;
+
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.section-heading p {
+  max-width: 850px;
+
+  margin: 14px 0 0;
+
+  color: #68809a;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   MINING CARDS
+   ========================================================= */
+
+.mining-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+.mining-card {
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 22px;
+
+  padding: 30px;
+
+  display: flex;
+
+  gap: 20px;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.mining-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 14px 30px rgba(20, 80, 50, 0.10);
+}
+
+.mining-icon {
+  min-width: 60px;
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 17px;
+
+  background: #dcfce7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 29px;
+}
+
+.mining-card h3 {
+  margin: 2px 0 10px;
+
+  color: #075b36;
+
+  font-size: 22px;
+
+  font-weight: 800;
+}
+
+.mining-card p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+.analysis-points {
+  margin-top: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.analysis-points div {
+  color: #405b73;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.analysis-points span {
+  color: #16a34a;
+
+  font-size: 20px;
+
+  margin-right: 8px;
+}
+
+.method-tag {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: #ecfdf3;
+
+  color: #087f3f;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FACTOR SECTION
+   ========================================================= */
+
+.factor-section {
+  max-width: 1250px;
+}
+
+.factor-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.factor-card {
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: flex-start;
+
+  box-shadow: 0 7px 22px rgba(20, 80, 50, 0.05);
+
+  transition: transform 0.25s ease;
+}
+
+.factor-card:hover {
+  transform: translateY(-3px);
+}
+
+.factor-number {
+  min-width: 52px;
+
+  height: 52px;
+
+  border-radius: 15px;
+
+  background: #075b36;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+.factor-card h3 {
+  margin: 2px 0 8px;
+
+  color: #075b36;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.factor-card p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PATTERN SECTION
+   ========================================================= */
+
+.pattern-section {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 30px 70px;
+}
+
+.pattern-content {
+  background: #075b36;
+
+  border-radius: 28px;
+
+  padding: 45px;
+
+  color: white;
+}
+
+.pattern-text {
+  max-width: 850px;
+
+  margin-bottom: 40px;
+}
+
+.section-label {
+  display: block;
+
+  color: #a7f3c8;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.pattern-text h2 {
+  margin: 0;
+
+  font-size: 36px;
+
+  font-weight: 800;
+}
+
+.pattern-text p {
+  margin: 15px 0 0;
+
+  color: #d7f5e5;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PATTERN FLOW
+   ========================================================= */
+
+.pattern-flow {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.flow-item {
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 20px;
+
+  padding: 25px 20px;
+}
+
+.flow-icon {
+  width: 55px;
+
+  height: 55px;
+
+  margin: 0 auto 15px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 26px;
+}
+
+.flow-item h3 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.flow-item p {
+  margin: 0;
+
+  color: #d7f5e5;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+.flow-arrow {
+  font-size: 35px;
+
+  color: #a7f3c8;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TAKEAWAY
+   ========================================================= */
+
+.takeaway-section {
+  max-width: 1190px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #dce8e2;
+
+  border-radius: 22px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 22px;
+
+  box-shadow: 0 8px 25px rgba(20, 80, 50, 0.06);
+}
+
+.takeaway-icon {
+  min-width: 60px;
+
+  height: 60px;
+
+  border-radius: 17px;
+
+  background: #dcfce7;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 30px;
+}
+
+.takeaway-section h2 {
+  margin: 2px 0 8px;
+
+  color: #075b36;
+
+  font-size: 25px;
+
+  font-weight: 800;
+}
+
+.takeaway-section p {
+  margin: 0;
+
+  color: #66809c;
+
+  font-size: 17px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .insights-hero h1 {
+    font-size: 45px;
+  }
+
+  .insight-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .mining-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-flow {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .insights-hero {
+    padding: 50px 20px 40px;
+  }
+
+  .insights-hero h1 {
+    font-size: 36px;
+  }
+
+  .insights-hero p {
+    font-size: 18px;
+  }
+
+  .insight-summary,
+  .mining-section,
+  .factor-section,
+  .pattern-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .factor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-content {
+    padding: 30px 22px;
+  }
+
+  .pattern-text h2 {
+    font-size: 29px;
+  }
+
+  .takeaway-section {
+    margin: 0 20px;
+
+    padding: 25px;
+
+    flex-direction: column;
+  }
+
+}
