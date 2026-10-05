@@ -56,22 +56,25 @@ function Predict() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://restaurant-food-waste-prediction.onrender.com/predict", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          meals_served: Number(formData.meals_served),
-          kitchen_staff: Number(formData.kitchen_staff),
-          temperature_C: Number(formData.temperature_C),
-          humidity_percent: Number(formData.humidity_percent),
-          day_of_week: Number(formData.day_of_week),
-          special_event: Number(formData.special_event),
-          past_waste_kg: Number(formData.past_waste_kg),
-          staff_experience: formData.staff_experience,
-        }),
-      });
+      const response = await fetch(
+        "https://restaurant-food-waste-prediction.onrender.com/predict",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            meals_served: Number(formData.meals_served),
+            kitchen_staff: Number(formData.kitchen_staff),
+            temperature_C: Number(formData.temperature_C),
+            humidity_percent: Number(formData.humidity_percent),
+            day_of_week: Number(formData.day_of_week),
+            special_event: Number(formData.special_event),
+            past_waste_kg: Number(formData.past_waste_kg),
+            staff_experience: formData.staff_experience,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Unable to get prediction.");
@@ -79,7 +82,50 @@ function Predict() {
 
       const data = await response.json();
 
-      setResult(data);
+      // =====================================================
+      // SAVE PREDICTION TO LOCAL STORAGE
+      // =====================================================
+
+      const predictionRecord = {
+        id: Date.now(),
+        date: new Date().toLocaleString(),
+
+        // Input values
+        meals_served: Number(formData.meals_served),
+        kitchen_staff: Number(formData.kitchen_staff),
+        temperature_C: Number(formData.temperature_C),
+        humidity_percent: Number(formData.humidity_percent),
+        day_of_week: Number(formData.day_of_week),
+        special_event: Number(formData.special_event),
+        past_waste_kg: Number(formData.past_waste_kg),
+        staff_experience: formData.staff_experience,
+
+        // Prediction result
+        predicted_food_waste_kg: data.predicted_food_waste_kg,
+        waste_percentage: data.waste_percentage,
+        risk_level: data.risk_level,
+        recommendation: data.recommendation,
+      };
+
+      // Get previous predictions
+      const existingPredictions = JSON.parse(
+        localStorage.getItem("wasteWisePredictions") || "[]"
+      );
+
+      // Add current prediction
+      existingPredictions.push(predictionRecord);
+
+      // Save updated prediction history
+      localStorage.setItem(
+        "wasteWisePredictions",
+        JSON.stringify(existingPredictions)
+      );
+
+      // Show prediction result
+      setResult({
+        ...data,
+        prediction_saved: true,
+      });
     } catch (err) {
       console.error(err);
 
@@ -137,7 +183,6 @@ function Predict() {
       ================================================= */}
 
       <section className="predict-header">
-
         <div>
           <p className="page-label">FOOD WASTE PREDICTION</p>
 
@@ -148,9 +193,7 @@ function Predict() {
             how much food may be wasted and understand the level of waste risk.
           </p>
         </div>
-
       </section>
-
 
       {/* =================================================
           MAIN CONTENT
@@ -175,7 +218,6 @@ function Predict() {
               </p>
             </div>
           </div>
-
 
           <form onSubmit={handleSubmit}>
 
@@ -205,7 +247,6 @@ function Predict() {
 
               </div>
 
-
               <div className="form-group">
 
                 <label>
@@ -229,7 +270,6 @@ function Predict() {
               </div>
 
             </div>
-
 
             {/* ROW 2 */}
 
@@ -257,7 +297,6 @@ function Predict() {
 
               </div>
 
-
               <div className="form-group">
 
                 <label>
@@ -284,7 +323,6 @@ function Predict() {
 
             </div>
 
-
             {/* ROW 3 */}
 
             <div className="form-row">
@@ -301,25 +339,17 @@ function Predict() {
                   value={formData.day_of_week}
                   onChange={handleChange}
                 >
-
                   <option value="">
                     Select day
                   </option>
 
                   <option value="0">Sunday</option>
-
                   <option value="1">Monday</option>
-
                   <option value="2">Tuesday</option>
-
                   <option value="3">Wednesday</option>
-
                   <option value="4">Thursday</option>
-
                   <option value="5">Friday</option>
-
                   <option value="6">Saturday</option>
-
                 </select>
 
                 <small>
@@ -327,7 +357,6 @@ function Predict() {
                 </small>
 
               </div>
-
 
               <div className="form-group">
 
@@ -340,7 +369,6 @@ function Predict() {
                   value={formData.special_event}
                   onChange={handleChange}
                 >
-
                   <option value="0">
                     No
                   </option>
@@ -348,7 +376,6 @@ function Predict() {
                   <option value="1">
                     Yes
                   </option>
-
                 </select>
 
                 <small>
@@ -358,7 +385,6 @@ function Predict() {
               </div>
 
             </div>
-
 
             {/* ROW 4 */}
 
@@ -387,7 +413,6 @@ function Predict() {
 
               </div>
 
-
               <div className="form-group">
 
                 <label>
@@ -399,7 +424,6 @@ function Predict() {
                   value={formData.staff_experience}
                   onChange={handleChange}
                 >
-
                   <option value="beginner">
                     Beginner
                   </option>
@@ -411,7 +435,6 @@ function Predict() {
                   <option value="experienced">
                     Experienced
                   </option>
-
                 </select>
 
                 <small>
@@ -422,7 +445,6 @@ function Predict() {
 
             </div>
 
-
             {/* ERROR */}
 
             {error && (
@@ -430,7 +452,6 @@ function Predict() {
                 ⚠️ {error}
               </div>
             )}
-
 
             {/* BUTTONS */}
 
@@ -468,7 +489,6 @@ function Predict() {
           </form>
 
         </div>
-
 
         {/* =================================================
             RESULT SECTION
@@ -515,7 +535,6 @@ function Predict() {
 
           )}
 
-
           {loading && (
 
             <div className="result-loading">
@@ -532,7 +551,6 @@ function Predict() {
 
           )}
 
-
           {result && !loading && (
 
             <div className="result-content">
@@ -542,15 +560,16 @@ function Predict() {
                 <span>📊</span>
 
                 <div>
+
                   <h2>Prediction Result</h2>
 
                   <p>
                     Estimated food waste for the given conditions
                   </p>
+
                 </div>
 
               </div>
-
 
               {/* MAIN RESULT */}
 
@@ -565,7 +584,6 @@ function Predict() {
 
               </div>
 
-
               {/* RESULT STATS */}
 
               <div className="result-stats">
@@ -577,15 +595,16 @@ function Predict() {
                   </span>
 
                   <div>
+
                     <p>Waste Percentage</p>
 
                     <strong>
                       {result.waste_percentage}%
                     </strong>
+
                   </div>
 
                 </div>
-
 
                 <div className="result-stat">
 
@@ -594,17 +613,18 @@ function Predict() {
                   </span>
 
                   <div>
+
                     <p>Waste Risk</p>
 
                     <strong className={getRiskClass()}>
                       {result.risk_level}
                     </strong>
+
                   </div>
 
                 </div>
 
               </div>
-
 
               {/* WASTE BAR */}
 
@@ -642,10 +662,11 @@ function Predict() {
 
               </div>
 
-
               {/* RECOMMENDATION */}
 
-              <div className={`recommendation-box ${getRiskClass()}`}>
+              <div
+                className={`recommendation-box ${getRiskClass()}`}
+              >
 
                 <div className="recommendation-icon">
                   💡
@@ -665,10 +686,9 @@ function Predict() {
 
               </div>
 
-
               {/* SUCCESS MESSAGE */}
 
-              {result.database_saved && (
+              {result.prediction_saved && (
 
                 <div className="saved-message">
                   ✓ Prediction recorded successfully.
@@ -684,7 +704,6 @@ function Predict() {
 
       </div>
 
-
       {/* =================================================
           HELPFUL INFORMATION
       ================================================= */}
@@ -697,7 +716,9 @@ function Predict() {
 
           <div>
 
-            <h3>Why does this matter?</h3>
+            <h3>
+              Why does this matter?
+            </h3>
 
             <p>
               Knowing the expected food waste before preparation
@@ -709,14 +730,15 @@ function Predict() {
 
         </div>
 
-
         <div className="help-card">
 
           <span>♻️</span>
 
           <div>
 
-            <h3>How to reduce waste?</h3>
+            <h3>
+              How to reduce waste?
+            </h3>
 
             <p>
               When the predicted risk is high, consider preparing
